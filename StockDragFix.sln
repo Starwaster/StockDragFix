@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockDragFix", "StockDragFix\StockDragFix.csproj", "{A1509F10-A1F3-4193-BFA1-02F285C1DA57}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1509F10-A1F3-4193-BFA1-02F285C1DA57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1509F10-A1F3-4193-BFA1-02F285C1DA57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1509F10-A1F3-4193-BFA1-02F285C1DA57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1509F10-A1F3-4193-BFA1-02F285C1DA57}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = StockDragFix\StockDragFix.csproj
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = None
+		$1.ResourceNamePolicy = FileFormatDefault
+		$0.TextStylePolicy = $2
+		$2.inheritsSet = null
+		$2.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $3
+		$3.AnonymousMethodBraceStyle = NextLine
+		$3.PropertyBraceStyle = NextLine
+		$3.PropertyGetBraceStyle = NextLine
+		$3.PropertySetBraceStyle = NextLine
+		$3.EventBraceStyle = NextLine
+		$3.EventAddBraceStyle = NextLine
+		$3.EventRemoveBraceStyle = NextLine
+		$3.StatementBraceStyle = NextLine
+		$3.IfElseBraceForcement = AddBraces
+		$3.ForBraceForcement = AddBraces
+		$3.WhileBraceForcement = AddBraces
+		$3.UsingBraceForcement = AddBraces
+		$3.FixedBraceForcement = AddBraces
+		$3.ElseIfNewLinePlacement = SameLine
+		$3.AfterDelegateDeclarationParameterComma = True
+		$3.inheritsSet = Mono
+		$3.inheritsScope = text/x-csharp
+		$3.scope = text/x-csharp
+		$0.StandardHeader = $4
+		$4.Text = 
+		$4.IncludeInNewFiles = True
+		$0.VersionControlPolicy = $5
+		$5.inheritsSet = Mono
+		$0.ChangeLogPolicy = $6
+		$6.UpdateMode = ProjectRoot
+		$6.MessageStyle = $7
+		$7.LineAlign = 0
+		$6.inheritsSet = Mono
+		version = 1.0
+	EndGlobalSection
+EndGlobal
