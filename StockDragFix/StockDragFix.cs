@@ -13,6 +13,7 @@ namespace StockDragFix {
 			foreach(ConfigNode node in GameDatabase.Instance.GetConfigNodes("STOCK_DRAG_FIX_SETTINGS")) {
 				if(node.HasValue("dragScale")) {
 					float.TryParse(node.GetValue("dragScale"), out dragScale);
+					dragScale = Mathf.Abs(dragScale);
 				}
 				if(node.HasValue("enableConicDragTypes")) {
 					bool.TryParse(node.GetValue("enableConicDragTypes"), out enableConicDragTypes);
