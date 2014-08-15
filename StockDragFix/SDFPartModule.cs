@@ -31,6 +31,8 @@ namespace StockDragFix {
 				print(part.name + " drag set to " + minimum_drag.ToString() + " / " + maximum_drag.ToString());
 			}
 
+			drag_multiplier = StockDragFix.dragScale;
+
 			//check if we have stack attach nodes
 			foreach(AttachNode node in part.attachNodes) {
 				if(node.nodeType == AttachNode.NodeType.Stack) {
@@ -42,14 +44,17 @@ namespace StockDragFix {
 					}
 				}
 			}
+
+
 		}
 
 		public void FixedUpdate() {
-			part.minimum_drag = maximum_drag * part.mass / (part.mass + part.GetResourceMass());
 			part.maximum_drag = maximum_drag * part.mass / (part.mass + part.GetResourceMass());
+			part.minimum_drag = maximum_drag * part.mass / (part.mass + part.GetResourceMass());
 
-			part.minimum_drag *= StockDragFix.dragScale * drag_multiplier;
-			part.maximum_drag *= StockDragFix.dragScale * drag_multiplier;
+			part.maximum_drag *= drag_multiplier;
+			part.minimum_drag *= drag_multiplier;
+			
 		}
 	}
 }
