@@ -23,7 +23,9 @@ namespace StockDragFix {
 				foreach(AvailablePart part in PartLoader.LoadedPartsList) {
 					try {
 						if(part.partPrefab != null) {
-							if(enableConicDragTypes && part.partPrefab.Modules.Contains("ProceduralFairingSide") || part.partPrefab.partInfo.name.ToLowerInvariant().Contains("cone") || part.partPrefab.partInfo.title.ToLowerInvariant().Contains("cone")) {
+							if(enableConicDragTypes && part.partPrefab.Modules.Contains("ProceduralFairingSide")
+								|| part.partPrefab.partInfo.name.ToLowerInvariant().Contains("cone")
+								|| part.partPrefab.partInfo.title.ToLowerInvariant().Contains("cone")) {
 								part.partPrefab.dragModel = Part.DragModel.CONIC;
 								part.partPrefab.dragModelType = "Conical";
 								Debug.Log(part.name + " switched to CONIC Drag Model");
