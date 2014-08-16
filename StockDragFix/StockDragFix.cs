@@ -6,6 +6,7 @@ namespace StockDragFix {
 	[KSPAddon(KSPAddon.Startup.MainMenu, false)]
 	public class StockDragFix : UnityEngine.MonoBehaviour {
 		public static float dragScale = 1f;
+		public static float stackDrag = 0.1f;
 		public static bool enableConicDragTypes = false;
 
 		public void Start() {
@@ -14,6 +15,10 @@ namespace StockDragFix {
 				if(node.HasValue("dragScale")) {
 					float.TryParse(node.GetValue("dragScale"), out dragScale);
 					dragScale = Mathf.Abs(dragScale);
+				}
+				if(node.HasValue("stackDrag")) {
+					float.TryParse(node.GetValue("stackDrag"), out stackDrag);
+					stackDrag = Mathf.Abs(stackDrag);
 				}
 				if(node.HasValue("enableConicDragTypes")) {
 					bool.TryParse(node.GetValue("enableConicDragTypes"), out enableConicDragTypes);

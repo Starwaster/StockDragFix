@@ -33,19 +33,24 @@ namespace StockDragFix {
 
 			drag_multiplier = StockDragFix.dragScale;
 
-			//check if we have stack attach nodes
-			foreach(AttachNode node in part.attachNodes) {
-				if(node.nodeType == AttachNode.NodeType.Stack) {
-					if(node.attachedPart == null) {
-						//add a 5% drag increase per unfilled stack attach point
-						//since cones only have 1 stack node, and it's always filled... :D
-						//this means that minimally we will have 5% extra drag for each stack due to the engines
-						drag_multiplier += 0.05f;
+			/* Extra drag should be a multiple of the dragScale, so it stays a fraction of the drag. */
+			if(StockDragFix.stackDrag > 0) {
+				float extraDrag = StockDragFix.stackDrag * StockDragFix.dragScale;
+
+				/* check if we have stack attach nodes */
+				foreach(AttachNode node in part.attachNodes) {
+					if(node.nodeType == AttachNode.NodeType.Stack) {
+						if(node.attachedPart == null) {
+							/* add a increase to drag per unfilled stack attach point,
+							 * since cones only have 1 stack node, and it's always filled.
+							 * This also meaning that flying vessels will also be more stable
+							 * as the part with highest drag (the engines) will want to be behind it.
+							 */
+							drag_multiplier += extraDrag;
+						}
 					}
 				}
 			}
-
-
 		}
 
 		public void FixedUpdate() {
