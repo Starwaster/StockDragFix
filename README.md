@@ -1,5 +1,6 @@
 StockDragFix
 ============
+TLDR: Fixes aerodynamics without breaking compatibility
 As the name says, this fixes a problem with KSP's aerodynamic model. To recap, KSP uses mass to approximate cross sectional 
 area. While this may not be the correct way to implement drag, the premise of this mod is that KSP's drag system is an 
 abstraction of a complex problem and while not accurate is acceptable enough from a game design point of view.
