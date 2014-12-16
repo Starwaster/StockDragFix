@@ -27,6 +27,8 @@ namespace StockDragFix
 				if (node.HasValue ("dragScale"))
 				{
 					float.TryParse (node.GetValue ("dragScale"), out dragScale);
+					if (dragScale < 0f)
+						dragScale = 1f;
 				}
 				if(node.HasValue ("enableConicDragTypes"))
 				{
