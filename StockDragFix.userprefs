@@ -1,16 +1,15 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="StockDragFix/StockDragFix.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="StockDragFix\StockDragFix.cs">
     <Files>
-      <File FileName="StockDragFix/StockDragFix.cs" Line="25" Column="94" />
-      <File FileName="StockDragFix/SDFPartModule.cs" Line="54" Column="34" />
+      <File FileName="StockDragFix\SDFPartModule.cs" Line="13" Column="34" />
+      <File FileName="StockDragFix\StockDragFix.cs" Line="47" Column="239" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
-        <State expanded="True">
+        <State expanded="True" selected="True">
           <Node name="StockDragFix" expanded="True">
             <Node name="References" expanded="True" />
-            <Node name="StockDragFix.cs" selected="True" />
           </Node>
         </State>
       </Pad>

@@ -1,0 +1,5 @@
+- Recompiled for KSP 0.90
+- Optimization changes:
+- Removed unnecessary checks and computations
+- Moved dragScale sanity check to main SDF class. (one time execution)
+- Fed some turkey sammich to Cleopatra, The Feral Cat

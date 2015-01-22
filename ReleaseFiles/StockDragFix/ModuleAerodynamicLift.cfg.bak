@@ -1,0 +1,91 @@
+@PART[*]:HAS[@MODULE[ModuleLiftingSurface]]
+{
+	MODULE
+	{
+		name = ModuleAerodynamicLift
+		liftFactor = #$/MODULE[ModuleLiftingSurface]/deflectionLiftCoeff$
+		dragFactor = #$/MODULE[ModuleLiftingSurface]/dragAtMaxAoA$
+		@liftFactor *= 0.0000509683
+		@dragFactor *= 0.0000509683
+		planformArea = #$/MODULE[ModuleLiftingSurface]/deflectionLiftCoeff$
+		@planformArea *= 4
+		//@planformArea *= 2
+		centerOfLiftTransformName = model
+		
+		liftAoA
+		{
+			key = 0 0.55
+			key = 0.1111111 1.45
+			key = 0.1888889 1.7 0 0
+			key = 0.2777778 1.45 -6.036619 0
+		}
+		dragAoA
+		{
+			key = 0 0.02 0.3473684 0.3473684
+			key = 0.05555556 0.03929824 0.4950001 0.4950001
+			key = 0.1111111 0.075 0.7713158 0.7713158
+			key = 0.1666667 0.125 1.35 1.35
+			key = 0.2222222 0.225 2.295 2.295
+			key = 0.2777778 0.38 2.789999 2.789999		
+		}
+	}
+	!MODULE[ModuleLiftingSurface]{}
+}
+@PART[*]:HAS[#module[Winglet]]
+{
+	MODULE
+	{
+		name = ModuleAerodynamicLift
+		liftFactor = #$../deflectionLiftCoeff$
+		dragFactor = #$../dragCoeff$
+		@liftFactor *= 0.0000509683
+		@dragFactor *= 0.0000509683
+		planformArea = #$../deflectionLiftCoeff$
+		@planformArea *= 4
+		//@planformArea *= 2
+		centerOfLiftTransformName = model
+		
+		liftAoA
+		{
+			key = 0 0.55
+			key = 0.1111111 1.45
+			key = 0.1888889 1.7 0 0
+			key = 0.2777778 1.45 -6.036619 0
+		}
+		dragAoA
+		{
+			key = 0 0.02 0.3473684 0.3473684
+			key = 0.05555556 0.03929824 0.4950001 0.4950001
+			key = 0.1111111 0.075 0.7713158 0.7713158
+			key = 0.1666667 0.125 1.35 1.35
+			key = 0.2222222 0.225 2.295 2.295
+			key = 0.2777778 0.38 2.789999 2.789999		
+		}
+	}
+	@module = Part
+}
+//MODULE
+//{
+//	name = ModuleAerodynamicLift
+//	liftFactor = 0.001
+//	dragFactor = 0.001
+//	centerOfLiftTransformName = CenterOfLift
+//
+//	liftAoA
+//	{
+//		key = 0.0 1
+//		key = 0.2 3
+//		key = 0.4 4
+//		key = 0.6 1
+//		key = 0.7 0
+//		key = 1.0 -1
+//	}
+//	dragAoA
+//	{
+//		key = 0.0 1
+//		key = 0.2 3
+//		key = 0.5 5
+//		key = 0.7 6
+//		key = 1.0 7
+//	}
+//}

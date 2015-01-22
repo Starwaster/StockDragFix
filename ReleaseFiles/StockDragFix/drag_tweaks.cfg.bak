@@ -1,0 +1,67 @@
+\\ Assign All Parts a "Diameter" Field
+@PART[*]:HAS[#mass[*]]:FIRST
+{
+	\\ Default size of typical greeble?
+	%diameter = 0.625
+}
+
+\\ Edit Diameters
+@PART[fuelTank*]
+{
+	%diameter = 1.25
+}
+@PART[fuelTank*-*]
+{
+	%diameter = 2.5
+}
+@PART[Size3*]
+{
+	%diameter = 3.75
+}
+
+@PART[SDHI_2.5_*]
+{
+	%diameter = 2.5
+}
+@PART[Mark1-2Pod]
+{
+	%diameter = 2.5
+}
+@PART[mk1pod]
+{
+	%diameter = 1.25
+}
+@PART[KW1m*]
+{
+	%diameter = 1.25
+}
+@PART[KW2m*]
+{
+	%diameter = 2.5
+}
+@PART[KW3m*]
+{
+	%diameter = 3.75
+}
+@PART[KW5m*]
+{
+	%diameter = 5.00
+}
+
+
+\\ Calculate Drag Coefficients
+@PART[*]:HAS[#diameter[*]]:Final
+{
+	@minimum_drag *= 0.317203425 // 0.21146895
+	@minimum_drag *= #$diameter$
+	@minimum_drag *= #$diameter$
+	@minimum_drag /= #$mass$
+	@maximum_drag *= 0.317203425
+	@maximum_drag *= #$diameter$
+	@maximum_drag *= #$diameter$
+	@maximum_drag /= #$mass$
+}
+
+//q? 1.83 10–4 V3 ?
+//rnose
+//-----------

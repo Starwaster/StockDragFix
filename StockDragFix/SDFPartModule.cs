@@ -48,10 +48,8 @@ namespace StockDragFix
 
 		public void FixedUpdate()
 		{
-			part.minimum_drag = maximum_drag * part.mass / (part.mass + part.GetResourceMass ());
-			part.maximum_drag = maximum_drag * part.mass / (part.mass + part.GetResourceMass ());
-			part.minimum_drag *= Mathf.Abs(StockDragFix.dragScale);
-			part.maximum_drag *= Mathf.Abs( StockDragFix.dragScale);
+			part.minimum_drag = maximum_drag * part.mass / (part.mass + part.GetResourceMass ()) * StockDragFix.dragScale;
+			part.maximum_drag = maximum_drag * part.mass / (part.mass + part.GetResourceMass ()) * StockDragFix.dragScale;
 		}
 	}
 }

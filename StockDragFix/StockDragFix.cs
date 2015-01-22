@@ -27,6 +27,8 @@ namespace StockDragFix
 				if (node.HasValue ("dragScale"))
 				{
 					float.TryParse (node.GetValue ("dragScale"), out dragScale);
+					if (dragScale < 0f)
+						dragScale = 1f;
 				}
 				if(node.HasValue ("enableConicDragTypes"))
 				{
@@ -42,10 +44,10 @@ namespace StockDragFix
 					{
 						if (part.partPrefab != null) 
 						{
-							if (enableConicDragTypes && part.partPrefab.Modules.Contains ("ProceduralFairingSide") || part.partPrefab.partInfo.name.ToLowerInvariant().Contains ("cone") || part.partPrefab.partInfo.title.ToLowerInvariant ().Contains ("cone"))
+							if (enableConicDragTypes && (part.partPrefab.Modules.Contains ("ProceduralFairingSide") || part.partPrefab.partInfo.name.ToLowerInvariant().Contains ("cone") || part.partPrefab.partInfo.title.ToLowerInvariant ().Contains ("cone")))
 							{
 								part.partPrefab.dragModel = Part.DragModel.CONIC;
-								part.partPrefab.dragModelType = "Conical";
+								part.partPrefab.dragModelType = "Conic";
 								Debug.Log (part.name + " switched to CONIC Drag Model");
 							}
 						}
@@ -62,10 +64,13 @@ namespace StockDragFix
 	[KSPAddon(KSPAddon.Startup.Flight, false)]
 	public class DragFixer : UnityEngine.MonoBehaviour
 	{
-		public void Start()
+		public void Awake()
 		{
 			GameEvents.onVesselGoOffRails.Add (SDFAddDragModules);
+		}
 
+		public void Start()
+		{
 		}
 
 		private void SDFAddDragModules(Vessel v)
